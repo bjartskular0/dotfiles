@@ -7,5 +7,7 @@ source ~/.config/nvim/plugins.vim
 " Keybinding
 source ~/.config/nvim/keybindings.vim
 
+{{- if eq .chezmoi.hostname "hdsk01" }}
 " Coc
 source ~/.config/nvim/coc.vim
+{{- end }}
