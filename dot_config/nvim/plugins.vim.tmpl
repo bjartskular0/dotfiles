@@ -3,7 +3,7 @@ call plug#begin('~/.local/share/nvim/site/plugged')
 " Python
 Plug 'Vimjas/vim-python-pep8-indent', { 'for': 'python' }
 Plug 'uiiaoo/java-syntax.vim', {'for': 'java'} "better java syntax
-{{- if eq .chezmoi.hostname }}
+{{- if eq .chezmoi.hostname "hdsk01" }}
 Plug 'rhysd/vim-clang-format'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -71,7 +71,7 @@ let g:signify_sign_change = '~'
 let g:signify_sign_delete = '-'
 
 function! LightlineSignify()
-  let l:branch = fugitive#head()
+  let l:branch = FugitiveHead()
   if !exists('b:sy')
     if !empty(l:branch)
       return printf('%s', l:branch)
